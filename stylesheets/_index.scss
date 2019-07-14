@@ -1,0 +1,239 @@
+.indexbg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+
+  &::after {
+    position: absolute;
+    right: 0;
+    background-color: $blue;
+    width: 39.3%;
+    height: 100%;
+    z-index: -1;
+    content: '';
+  }
+}
+
+.clockbody {
+  padding: 45px 85px;
+  width: 1280px;
+  height: 800px;
+}
+
+.clock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+
+  &__todoblock {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 445px;
+    height: 100%;
+  }
+
+  &__todotitle {
+    display: flex;
+
+    & div:nth-child(1) {
+      margin-right: 24px;
+      i{
+        color: $blue;
+        font-size: 64px;
+        cursor: pointer;
+      }
+    }
+
+    & div:nth-child(2) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: $blue;
+      font-size: 24px;
+      font-weight: 900;
+      text-transform: uppercase;
+
+      & p:nth-child(2){
+        i{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  &__reciprocal {
+    font-size: 176px;
+    font-weight: 700;
+  }
+
+  &__todolist {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    color: $blue;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    & ul {
+      width: 100%;
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        border-bottom: 2px solid rgba($color: $blue, $alpha: 0.2);
+        padding: 8px 0;
+
+        span {
+          display: flex;
+          align-items: center;
+
+          i {
+            margin-right: 10px;
+            cursor: pointer;
+          }
+        }
+
+        &>i {
+          cursor: pointer;
+        }
+      }
+    }
+
+    &>a {
+      margin-top: 20px;
+    }
+  }
+
+  &__clock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 500px;
+    width: 540px;
+    height: 540px;
+
+    svg {
+      position: absolute;
+      z-index: 0;
+      stroke-width: 20px;
+      fill: none;
+      transform: rotate(-90deg);
+    }
+    
+    .stroke {
+      stroke-dashoffset: 2000;
+      stroke-dasharray: 2000;
+    }
+    
+    .ani {
+      animation: circle-draw 3s linear infinite;
+    }
+    
+    @keyframes circle-draw {
+      0% {
+        stroke-dashoffset: 0;
+      }
+    
+      100% {
+        stroke-dashoffset: 2000;
+      }
+    }
+
+    & i {
+      display: none;
+      position: relative;
+      z-index: 2;
+      color: $white;
+      font-size: 96px;
+      cursor: pointer;
+
+      &::before {
+        position: absolute;
+        right: -12px;
+        bottom: 12px;
+        background-color: $white;
+        width: 12px;
+        height: 12px;
+        content: '';
+      }
+    }
+
+    &::before {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 1;
+      transform: translate(-50%, -50%);
+      border-radius: 500px;
+      width: 500px;
+      height: 500px;
+      content: '';
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    color: $white;
+
+    i {
+      color: $white;
+      font-size: 36px;
+      margin-bottom: 24px;
+    }
+
+    &>P {
+      font-size: 24px;
+      font-weight: 700;
+      writing-mode: vertical-lr;
+    }
+  }
+}
+
+.addnewtodo {
+  position: relative;
+  width: 100%;
+
+  input {
+    padding: 20px 16px;
+    outline: none;
+    border: none;
+    background-color: $white;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    &::placeholder {
+      font-style: italic;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+  }
+
+  i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+}
+
+.todocount {
+  display: block !important;
+}

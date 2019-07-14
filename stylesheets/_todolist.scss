@@ -1,0 +1,104 @@
+.todolist {
+  &__block {
+    width: 445px;
+    height: 100%;
+
+    &>div:nth-child(2){
+      height: 600px;
+      overflow: auto;
+
+      &::-webkit-scrollbar {
+        width: 15px;
+        margin-left: 5px;
+      }
+  
+      &::-webkit-scrollbar-track {
+        background-color: rgba($color: $blue, $alpha: 0.5);
+      }
+  
+      &::-webkit-scrollbar-thumb {
+        background-color: $pink;
+      }
+  
+      &::-webkit-scrollbar-button {
+        background-color: $white;
+      }
+    }
+
+    .addnewtodo {
+      input {
+        margin-bottom: 48px;
+      }
+    }
+  }
+
+  &__todo,
+  &__done {
+    &>p {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 0 16px;
+      background-color: rgba($color: $white, $alpha: 0.5);
+      height: 45px;
+      color: $white;
+      font-size: 24px;
+      line-height: 45px;
+
+      &>i {
+        cursor: pointer;
+      }
+    }
+
+    & ul {
+      width: 100%;
+      margin-bottom: 20px;
+
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        border-bottom: 2px solid rgba($color: $white, $alpha: 0.2);
+        padding: 8px 0;
+        color: $white;
+
+        span,
+        del {
+          display: flex;
+          align-items: center;
+
+          i {
+            margin-right: 10px;
+            cursor: pointer;
+          }
+        }
+
+        &>i {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &__todo{
+    & li:nth-child(1){
+      color: $pink;
+
+      &>i{
+        display: none;
+      }
+    }
+  }
+
+  &__done {
+    & li{
+      p {
+        i {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

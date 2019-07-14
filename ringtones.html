@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>THE F2E - 番茄鐘</title>
+</head>
+
+<body>
+  <audio name="musicAduio" src=""></audio>
+  <div class="appbodybg">
+    <main class="appbody">
+      <article class="appbody__block">
+        <div class="appbody__menu">
+          <nav>
+            <ul>
+              <li>
+                <a href="todolist.html">
+                  <i class="material-icons">list</i> to-do list
+                </a>
+              </li>
+              <li>
+                <a href="analytics.html">
+                  <i class="material-icons">insert_chart</i> analytics
+                </a>
+              </li>
+              <li class="appbody__menu--active">
+                <a href="ringtones.html">
+                  <i class="material-icons">library_music</i> ringtones
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <section class="appbody__reciprocal">
+            <div>
+              <div>
+                <i name="playIsdoingBtn" class="material-icons todocount">play_circle_filled</i>
+                <i name="pauseIsdoingBtn" class="material-icons">pause_circle_filled</i>
+              </div>
+            </div>
+            <div>
+              <p><span name="showMin">01</span>:<span name="showSecond">00</span></p>
+              <p name="isdoingTitle">the First thing to do today</p>
+            </div>
+          </section>
+        </div>
+        <section class="ringtones__block">
+          <div class="ringtones__work">
+            <p>WORK</p>
+            <form class="ringtones__select" action="">
+              <div>
+                <input type="radio" name="work" id="worknone" checked>
+                <label for="worknone"><span></span> NONE</label>
+              </div>
+              <div>
+                <input data-audio="music.mp3" type="radio" name="work" id="workmusic">
+                <label for="workmusic"><span></span> MUSIC</label>
+              </div>
+              <div>
+                <input data-audio="beep.mp3" type="radio" name="work" id="workbeep">
+                <label for="workbeep"><span></span> BEEP</label>
+              </div>
+              <div>
+                <input data-audio="bell.mp3" type="radio" name="work" id="workbell">
+                <label for="workbell"><span></span> BELL</label>
+              </div>
+              <div>
+                <input data-audio="bird.mp3" type="radio" name="work" id="workbird">
+                <label for="workbird"><span></span> BIRD</label>
+              </div>
+              <div>
+                <input data-audio="bugle.mp3" type="radio" name="work" id="workbugle">
+                <label for="workbugle"><span></span> BUGLE</label>
+              </div>
+              <div>
+                <input data-audio="digital.mp3" type="radio" name="work" id="workdigital">
+                <label for="workdigital"><span></span> DIGITAL</label>
+              </div>
+              <div>
+                <input data-audio="horn.mp3" type="radio" name="work" id="workhorn">
+                <label for="workhorn"><span></span> HORN</label>
+              </div>
+              <div>
+                <input data-audio="train.mp3" type="radio" name="work" id="worktrain">
+                <label for="worktrain"><span></span> TRAIN</label>
+              </div>
+            </form>
+          </div>
+          <div class="ringtones__break">
+            <p>BREAK</p>
+            <form class="ringtones__select" action="">
+              <div>
+                <input type="radio" name="break" id="breaknone" checked>
+                <label for="breaknone"><span></span> NONE</label>
+              </div>
+              <div>
+                <input data-audio="music.mp3" type="radio" name="break" id="breakmusic">
+                <label for="breakmusic"><span></span> MUSIC</label>
+              </div>
+              <div>
+                <input data-audio="beep.mp3" type="radio" name="break" id="breakbeep">
+                <label for="breakbeep"><span></span> BEEP</label>
+              </div>
+              <div>
+                <input data-audio="bell.mp3" type="radio" name="break" id="breakbell">
+                <label for="breakbell"><span></span> BELL</label>
+              </div>
+              <div>
+                <input data-audio="bird.mp3" type="radio" name="break" id="breakbird">
+                <label for="breakbird"><span></span> BIRD</label>
+              </div>
+              <div>
+                <input data-audio="bugle.mp3" type="radio" name="break" id="breakbugle">
+                <label for="breakbugle"><span></span> BUGLE</label>
+              </div>
+              <div>
+                <input data-audio="digital.mp3" type="radio" name="break" id="breakdigital">
+                <label for="breakdigital"><span></span> DIGITAL</label>
+              </div>
+              <div>
+                <input data-audio="horn.mp3" type="radio" name="break" id="breakhorn">
+                <label for="breakhorn"><span></span> HORN</label>
+              </div>
+              <div>
+                <input data-audio="train.mp3" type="radio" name="break" id="breaktrain">
+                <label for="breaktrain"><span></span> TRAIN</label>
+              </div>
+            </form>
+          </div>
+        </section>
+        <div class="appbody__button">
+          <a href="index.html">
+            <i class="material-icons">close</i>
+          </a>
+          <p>POMODORO</p>
+        </div>
+      </article>
+    </main>
+  </div>
+  <script src="js/all.js"></script>
+</body>
+
+</html>

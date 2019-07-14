@@ -1,0 +1,154 @@
+.appbodybg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background-color: $blue;
+}
+
+.appbody {
+  padding: 45px 85px;
+  width: 1280px;
+  height: 800px;
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 350px;
+  
+    & ul {
+      text-transform: uppercase;
+      font-size: 36px;
+  
+      & li {
+        margin-bottom: 42px;
+  
+        a {
+          display: flex;
+          align-items: center;
+          transition: all ease-in-out 0.2s;
+          color: rgba($color: $white, $alpha: 0.2);
+  
+          &:hover {
+            color: $pink;
+          }
+        }
+  
+        i {
+          margin-right: 20px;
+          font-size: 36px;
+        }
+      }
+    }
+  
+    .appbody__menu--active {
+      &>a {
+        color: $pink;
+      }
+    }
+  }
+
+  &__reciprocal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 500px 500px 0 0;
+    background-color: $gray;
+    width: 100%;
+    height: 175px;
+
+    & div:nth-child(1) {
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      top: -25%;
+      border-radius: 500px;
+      background-color: $blue;
+      width: 116px;
+      height: 116px;
+
+      div {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        border: 1px solid $pink;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+
+        & i {
+          display: none;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: $pink;
+          font-size: 100px;
+          cursor: pointer;
+        }
+
+        &::before {
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          border-radius: 500px;
+          background-color: $white;
+          width: 80px;
+          height: 80px;
+          content: '';
+        }
+      }
+    }
+
+    & div:nth-child(2) {
+      margin-top: 65px;
+      text-align: center;
+
+      p:nth-child(1) {
+        color: $pink;
+        font-size: 64px;
+        font-weight: 700;
+      }
+
+      p:nth-child(2) {
+        color: $blue;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: $white;
+
+    i {
+      font-size: 48px;
+      color: $white;
+    }
+
+    p {
+      font-size: 24px;
+      font-weight: 700;
+      writing-mode: vertical-lr;
+    }
+  }
+}

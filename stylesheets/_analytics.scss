@@ -1,0 +1,60 @@
+.analytics {
+  &__block {
+    width: 445px;
+    height: 100%;
+  }
+
+  &__focustime,
+  &__chart {
+    &>p {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 0 16px;
+      background-color: rgba($color: $white, $alpha: 0.5);
+      height: 45px;
+      color: $white;
+      font-size: 24px;
+
+      &>span {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        line-height: 45px;
+        
+        span{
+          margin: 0 5px;
+        }
+
+        i {
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+
+  &__eattoamto{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 45px;
+    & div {
+      width: 50%;
+      p:nth-child(1){
+        margin-bottom: 5px;
+        color: $white;
+      }
+
+      p:nth-child(2) {
+        color: $pink;
+        font-size: 64px;
+        font-weight: 700;
+
+        span:nth-child(2){
+          color: rgba($color: $white, $alpha: 0.2);
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

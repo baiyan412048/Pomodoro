@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>THE F2E - 番茄鐘</title>
+</head>
+
+<body>
+  <div class="appbodybg">
+    <main class="appbody">
+      <article class="appbody__block">
+        <div class="appbody__menu">
+          <nav>
+            <ul>
+              <li>
+                <a href="todolist.html">
+                  <i class="material-icons">list</i> to-do list
+                </a>
+              </li>
+              <li class="appbody__menu--active">
+                <a href="analytics.html">
+                  <i class="material-icons">insert_chart</i> analytics
+                </a>
+              </li>
+              <li>
+                <a href="ringtones.html">
+                  <i class="material-icons">library_music</i> ringtones
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <section class="appbody__reciprocal">
+            <div>
+              <div>
+                <i name="playIsdoingBtn" class="material-icons todocount">play_circle_filled</i>
+                <i name="pauseIsdoingBtn" class="material-icons">pause_circle_filled</i>
+              </div>
+            </div>
+            <div>
+              <p><span name="showMin">01</span>:<span name="showSecond">00</span></p>
+              <p name="isdoingTitle">the First thing to do today</p>
+            </div>
+          </section>
+        </div>
+        <section class="analytics__block">
+          <div class="analytics__focustime">
+            <p>FOCUS TIME</p>
+            <div class="analytics__eattoamto">
+              <div>
+                <p>TODAY</p>
+                <p><span id="toDayEatenTomatos">20</span><span> / TOMATO</span></p>
+              </div>
+              <div>
+                <p>WEEK</p>
+                <p><span id="weekEatenTomatos">108</span><span> / TOMATO</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="analytics__chart">
+            <p>CHART <span><i class="material-icons">chevron_left</i><span id="weekstart">2019.7.1</span> - <span id="weekend">2019.7.7</span><i class="material-icons">chevron_right</i></span></p>
+            <canvas id="tomatoChart"></canvas>
+          </div>
+        </section>
+        <div class="appbody__button">
+          <a href="index.html">
+            <i class="material-icons">close</i>
+          </a>
+          <p>POMODORO</p>
+        </div>
+      </article>
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script src="js/all.js"></script>
+</body>
+
+</html>
