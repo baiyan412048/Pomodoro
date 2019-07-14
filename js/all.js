@@ -137,20 +137,20 @@ function getUpcoming() {
       `;
     }
   });
-  if (window.location.pathname === '/index.html') {
+  if (window.location.pathname === '/Pomodoro/index.html') {
     upcoming.innerHTML = str;
   }
   // 更新 playIndexTodobtn 數量及重新綁定
   changeTodo = document.getElementsByName('changeTodo');
   clickChangeTodoBtn();
 }
-if (window.location.pathname === '/index.html') {
+if (window.location.pathname === '/Pomodoro/index.html') {
   window.addEventListener('load', getUpcoming);
 }
 
 // 更新正在執行待辦事項的名稱及番茄數量
 function getIndexIsdoing() {
-  if (window.location.pathname === '/index.html') {
+  if (window.location.pathname === '/Pomodoro/index.html') {
     indexIsdoingTitle.textContent = isdoing.title;
     let tomato = '';
     for (let i = 0; i < isdoing.tomato; i += 1) {
@@ -163,7 +163,7 @@ function getIndexIsdoing() {
     eatTomato.innerHTML = str;
   }
 }
-if (window.location.pathname === '/index.html') {
+if (window.location.pathname === '/Pomodoro/index.html') {
   window.addEventListener('load', getIndexIsdoing);
 }
 
@@ -191,7 +191,7 @@ function getTodolist() {
       <i name="changeTodo" class="material-icons" data-index="${item.id}">play_circle_outline</i>
     </li>`;
   });
-  if (window.location.pathname === '/todolist.html') {
+  if (window.location.pathname === '/Pomodoro/todolist.html') {
     allTodo.innerHTML = str;
   }
   // 更新 clickChangeTodoBtn 數量及重新綁定
@@ -208,7 +208,7 @@ function getTodolist() {
   finshIsdoingBtn = document.getElementById('finshIsdoingBtn');
   getFinshIsdoingBtn();
 }
-if (window.location.pathname === '/todolist.html') {
+if (window.location.pathname === '/Pomodoro/todolist.html') {
   window.addEventListener('load', getTodolist);
 }
 
@@ -235,7 +235,7 @@ function getCompletelist() {
   });
   completeTodoList.innerHTML = str;
 }
-if (window.location.pathname === '/todolist.html') {
+if (window.location.pathname === '/Pomodoro/todolist.html') {
   window.addEventListener('load', getCompletelist);
 }
 
@@ -263,11 +263,11 @@ function implementTodo(event) {
       todoLsit.splice(index, 0, temptodo);
       localStorage.setItem('isdoing', JSON.stringify(isdoing));
       localStorage.setItem('todoLsit', JSON.stringify(todoLsit));
-      if (window.location.pathname === '/index.html') {
+      if (window.location.pathname === '/Pomodoro/index.html') {
         getUpcoming(); // 更新待執行任務清單
         getIndexIsdoing(); // 更新執行中任務
       }
-      if (window.location.pathname === '/todolist.html') {
+      if (window.location.pathname === '/Pomodoro/todolist.html') {
         getTodolist(); // 更新所有任務清單
         getIsdoing(); // 更新執行中任務 title
         getCompletelist(); // 更新已完成清單
@@ -345,7 +345,7 @@ function getEatenTomatos() {
   weekEatenTomatos.textContent = weekTomato.tomato;
   getChart();
 }
-if (window.location.pathname === '/analytics.html') {
+if (window.location.pathname === '/Pomodoro/analytics.html') {
   window.addEventListener('load', getEatenTomatos);
 }
 
@@ -355,7 +355,7 @@ function selectMusicChecked() {
   document.getElementById(workmusicSelect).checked = true;
   document.getElementById(breakmusicSelect).checked = true;
 }
-if (window.location.pathname === '/ringtones.html') {
+if (window.location.pathname === '/Pomodoro/ringtones.html') {
   window.addEventListener('load', selectMusicChecked);
 }
 
@@ -387,7 +387,7 @@ function selectAudio(event) {
     }
   });
 }
-if (window.location.pathname === '/ringtones.html') {
+if (window.location.pathname === '/Pomodoro/ringtones.html') {
   work.forEach((item) => {
     item.addEventListener('click', selectAudio);
   });
@@ -417,7 +417,7 @@ function pauseAudio() {
 // animation
 // 倒數動畫
 function countDownAnimation() {
-  if (window.location.pathname === '/index.html') {
+  if (window.location.pathname === '/Pomodoro/index.html') {
     strokeDashoffset += 27.1;
     stroke.style.strokeDashoffset = strokeDashoffset;
     if (strokeDashoffset > 2000) {
@@ -528,7 +528,7 @@ function countingDown() {
 function countTime() {
   if (mission === 'work') {
     if (!isCount) {
-      if (window.location.pathname === '/index.html') {
+      if (window.location.pathname === '/Pomodoro/index.html') {
         playIndexTodoBtn.classList.toggle('todocount');
         pauseIndexTodoBtn.classList.toggle('todocount');
       }
@@ -549,7 +549,7 @@ function countTime() {
     }
   } else if (mission === 'break') {
     if (!isCount) {
-      if (window.location.pathname === '/index.html') {
+      if (window.location.pathname === '/Pomodoro/index.html') {
         playIndexTodoBtn.classList.toggle('todocount');
         pauseIndexTodoBtn.classList.toggle('todocount');
       }
@@ -570,13 +570,13 @@ function countTime() {
     }
   }
 }
-if (window.location.pathname === '/index.html') {
+if (window.location.pathname === '/Pomodoro/index.html') {
   playIndexTodoBtn.addEventListener('click', countTime);
 }
 
 // 暫停倒數
 function pauseCountTime() {
-  if (window.location.pathname === '/index.html') {
+  if (window.location.pathname === '/Pomodoro/index.html') {
     playIndexTodoBtn.classList.toggle('todocount');
     pauseIndexTodoBtn.classList.toggle('todocount');
   }
@@ -590,7 +590,7 @@ function pauseCountTime() {
   pauseAudio();
   clearInterval(counting);
 }
-if (window.location.pathname === '/index.html') {
+if (window.location.pathname === '/Pomodoro/index.html') {
   pauseIndexTodoBtn.addEventListener('click', pauseCountTime);
 }
 
@@ -598,7 +598,7 @@ if (window.location.pathname === '/index.html') {
 function stopCountTime() {
   mission = 'work';
   // 動畫 & 倒數重置
-  if (window.location.pathname === '/index.html') {
+  if (window.location.pathname === '/Pomodoro/index.html') {
     workCountMin = 1;
     workCountSecond = 0;
     for (let i = 0; i < showMin.length; i += 1) {
@@ -609,7 +609,7 @@ function stopCountTime() {
     stroke.style.strokeDashoffset = strokeDashoffset; // 倒數動畫重置
   }
   // play & pause btn 重新顯示
-  if (window.location.pathname === '/todolist.html') {
+  if (window.location.pathname === '/Pomodoro/todolist.html') {
     playIsdoingBtn.forEach((item) => {
       if (item.className.indexOf('todocount') < 0) {
         item.classList.toggle('todocount');
@@ -642,18 +642,18 @@ function stopCountTime() {
   pauseAudio();
   // 變更樣式
   if (mission === 'break') { workAndBreakStyle(); }
-  if (window.location.pathname === '/index.html') {
+  if (window.location.pathname === '/Pomodoro/index.html') {
     getUpcoming();
     getIndexIsdoing();
   }
-  if (window.location.pathname === '/todolist.html') {
+  if (window.location.pathname === '/Pomodoro/todolist.html') {
     getTodolist();
     getIsdoing();
     getCompletelist();
   }
 }
 
-if (window.location.pathname === '/index.html') {
+if (window.location.pathname === '/Pomodoro/index.html') {
   finshIndexIsdoingBtn.addEventListener('click', stopCountTime);
 }
 
@@ -679,7 +679,7 @@ window.addEventListener('load', getIsdoingBtn);
 
 // app 停止倒數
 function getFinshIsdoingBtn() {
-  if (window.location.pathname === '/todolist.html') {
+  if (window.location.pathname === '/Pomodoro/todolist.html') {
     finshIsdoingBtn.addEventListener('click', stopCountTime);
   }
 }
@@ -695,11 +695,11 @@ function finshUpcomingTodo(event) {
       localStorage.setItem('finishTodo', JSON.stringify(finishTodo));
       todoLsit.splice(index, 1);
       localStorage.setItem('todoLsit', JSON.stringify(todoLsit));
-      if (window.location.pathname === '/index.html') {
+      if (window.location.pathname === '/Pomodoro/index.html') {
         getUpcoming();
         getIndexIsdoing();
       }
-      if (window.location.pathname === '/todolist.html') {
+      if (window.location.pathname === '/Pomodoro/todolist.html') {
         getTodolist();
         getIsdoing();
         getCompletelist();
