@@ -311,12 +311,10 @@ function getEatenTomatos() {
   let eachDayTomato = 0;
   // 當日番茄加總
   finishTodo.forEach((item) => {
-    console.log(item);
     toDay = new Date();
     const todoDay = new Date(item.id);
     if (toDay.getFullYear() === todoDay.getFullYear() && toDay.getMonth() + 1 === todoDay.getMonth() + 1 && toDay.getDate() === todoDay.getDate()) {
       todayTomato.tomato += item.tomato;
-      console.log(item);
     }
   });
   // 一週各日番茄加總
@@ -340,7 +338,6 @@ function getEatenTomatos() {
       }
     });
   });
-  console.log(todayTomato, weekTomato);
   toDayEatenTomatos.textContent = todayTomato.tomato;
   weekEatenTomatos.textContent = weekTomato.tomato;
   getChart();
@@ -473,7 +470,7 @@ function countingDown() {
     }
     if (workCountSecond === 0) {
       workCountMin -= 1;
-      workCountSecond = 10;
+      workCountSecond = 59;
       for (let i = 0; i < showMin.length; i += 1) {
         showMin[i].textContent = `0${workCountMin}`;
         showSecond[i].textContent = `${workCountSecond}`;
